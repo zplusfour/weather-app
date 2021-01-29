@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+body {
+  font-size: larger;
+  font-family: 'Poppins';
+  background: rgb(196, 190, 190);
+}
+
+#progress {
+  width: 100%;
+  max-width: 500px;
+  background: #ddd;
+}
+
+#bar {
+  width: 0%;
+  height: 40px;
+  line-height: 40px;
+  background: skyblue;
+  text-align: center;
+  color: black;
+}
+
+.forecast {
+  padding-left: auto;
+  padding-right: auto;
+  margin-left: auto;
+  margin-right: auto;
+  width: 500px;
+}
+
+.form {
+  padding-left: auto;
+  padding-right: auto;
+  margin-left: auto;
+  margin-right: auto;
+  width: 500px;
+}
+input[name="cityname"] {
+  border-radius: 10px 10px 10px 10px;
+}
+
+input[type="submit"] {
+  border-radius: 10px 10px 10px 10px;
+}

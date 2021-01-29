@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Forecast for: <%= info.name %></title>
+</head>
+<body>
+  <div class="forecast">
+    <h1>Forecast for: <%= info.name %></h1><br><br>
+    <h1><span id="main"><%= info.desc %></span></h1>
+    <h2>Wind speed: <%= info.windSpeed %></h2><br><br>
+    <h2>Clouds average: <div id="progress">
+      <div id="bar"></div>
+    </div></h2>
+  </div>
+  <script>
+    window.onload = () => {
+      const bar = document.getElementById("bar");
+      var w = 0;
+      var timeInt = setInterval(frame, 30);
+
+      function frame() {
+        if (w >= 100) {
+          clearInterval(timeInt);
+        } else {
+          bar.style.width = "<%= info.cloudsAverage %>%";
+          bar.innerHTML = "<%= info.cloudsAverage %>%";
+        }
+      }
+      function cap(string) {
+        return string.charAt(0).toUpperCase() + string.slice(1);
+      }
+      let string = document.getElementById("main").innerHTML;
+      document.getElementById("main").innerHTML = cap(string);
+    }
+  </script>
+</body>
+</html>
